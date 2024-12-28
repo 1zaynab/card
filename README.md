@@ -3,7 +3,7 @@
 🌟 Welcome to your new channel quote card! This handy feature will fetch the latest quote from your channel effortlessly. Ready to set it up? Just follow these simple steps:
 
 1. Open your Telegram app and head over to @BotFather.
-2. Create a new bot by typing in the command: /newbot.
+2. Create a new bot by typing in the command ' /newbot '.
 3. Choose a name that perfectly fits your bot’s personality!
 4. Select a unique username for your bot—make it memorable!
 5. Once you've set everything up, swing by your channel and add your newly created bot as an Admin.
