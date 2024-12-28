@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container * {
+  box-sizing: border-box;
+}
+
+.card-container {
+  background-image: url("https://i.pinimg.com/736x/d7/50/e4/d750e4bd84c8bf6a1ba8ac4459d52218.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card {
+  perspective: 1500px;
+  position: absolute;
+  left: calc(50% - 175px);
+  top: calc(50% - 250px);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: initial;
+  transform: rotate(-10deg) translate(0, 0);
+  animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.card:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 50px #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.card.is-opened {
+  transform: rotate(0deg) translate(175px, 0);
+}
+
+.card.is-opened .cart-page-front {
+  transform: rotateY(-180deg);
+}
+
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) translate(0, -100%);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-10deg) translate(0, 0);
+  }
+}
+
+.card,
+.card-page {
+  width: 350px;
+  height: 500px;
+}
+
+.card-page {
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  outline: 1px solid transparent;
+}
+
+.cart-page-front {
+  transform-origin: 0 50% 0;
+  transform-style: preserve-3d;
+  transform: rotateY(-20deg);
+  z-index: 2;
+}
+
+.cart-page-outside,
+.cart-page-inside {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cart-page-outside {
+  background-image: url("https://i.pinimg.com/736x/c0/54/e4/c054e483cfea48ef7dd04653cb189484.jpg");
+  border: 5px solid #d4d1d0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cart-page-inside,
+.cart-page-bottom {
+  background-image: url("https://i.pinimg.com/736x/6d/8e/9a/6d8e9a750b08665e11dc11e8e8bdec29.jpg");
+  border: 5px solid #d4d1d0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-page-inside {
+  transform: rotateY(-180deg);
+  border-right: none !important;
+}
+
+.cart-page-bottom {
+  z-index: 1;
+  border-left: none !important;
+  font-size: 20px;
+}
+
+.cards {
+  transform: rotate(-10deg);
+}
+
+.cards img {
+  width: 300px;
+  height: auto;
+}
+
+.cart-page-bottom {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d37171;
+}
+
+@media (max-width: 767px) {
+  .card {
+    left: calc(50% - 115px);
+    top: calc(50% - 164.5px);
+  }
+  .card.is-opened {
+    transform: rotate(0deg) translate(115px, 0);
+  }
+  .card,
+  .card-page {
+    width: 230px;
+    height: 329px;
+  }
+  .cart-page-inside,
+  .cart-page-bottom {
+    border: 3px solid #d4d1d0;
+  }
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+  .cart-page-bottom {
+    background-position: 85px 30px;
+    font-size: 11px;
+  }
+  .cards img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 479px) {
+  .card {
+    left: calc(50% - 75px);
+    top: calc(50% - 107px);
+  }
+  .card.is-opened {
+    transform: rotate(0deg) translate(75px, 0);
+  }
+  .card,
+  .card-page {
+    width: 150px;
+    height: 214px;
+  }
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+  .cart-page-bottom {
+    background-position: 0px 30px;
+    font-size: 10px;
+  }
+  .cards img {
+    width: 130px;
+  }
+}

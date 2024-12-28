@@ -1,0 +1,10 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "text": "Welcome to the quote system! Post in Telegram to update this.",
+      "timestamp": "2024-03-14T12:00:00Z"
+    }
+  ],
+  "lastUpdated": "2024-03-14T12:00:00Z"
+}
